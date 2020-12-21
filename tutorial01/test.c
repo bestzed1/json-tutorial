@@ -6,7 +6,7 @@
 static int main_ret = 0;
 static int test_count = 0;
 static int test_pass = 0;
-
+/* 宏定义；'\' 表示该行未结束，串接下一行，使用do...while(0)是为了将宏的多条语句包裹成单个语句*/
 #define EXPECT_EQ_BASE(equality, expect, actual, format) \
     do {\
         test_count++;\
