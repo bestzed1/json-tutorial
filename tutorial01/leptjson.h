@@ -1,25 +1,27 @@
 #ifndef LEPTJSON_H__
 #define LEPTJSON_H__
-/*JSON ä¸­çš„æ•°æ®ç±»åž‹*/
+/*JSON ÖÐµÄÊý¾ÝÀàÐÍ*/
 typedef enum { LEPT_NULL, LEPT_FALSE, LEPT_TRUE, LEPT_NUMBER, LEPT_STRING, LEPT_ARRAY, LEPT_OBJECT } lept_type;
-/*æ ‘å½¢ç»“æž„çš„èŠ‚ç‚¹*/
+/*Ê÷ÐÎ½á¹¹µÄ½Úµã*/
 typedef struct {
     lept_type type;
 }lept_value;
-/*è¡¨ç¤ºJSONçš„è§£æžç»“æžœ*/
+/*±íÊ¾JSONµÄ½âÎö½á¹û*/
 enum {
     LEPT_PARSE_OK = 0,
     LEPT_PARSE_EXPECT_VALUE,
     LEPT_PARSE_INVALID_VALUE,
     LEPT_PARSE_ROOT_NOT_SINGULAR
 };
-/*è§£æžå‡½æ•°
+/*½âÎöº¯Êý
  *@para:
- * vï¼šä¼ å…¥çš„æ ¹èŠ‚ç‚¹æŒ‡é’ˆï¼Œä¿å­˜è§£æžç»“æžœ
- * jsonï¼šä¼ å…¥çš„JSONæ–‡æœ¬æ˜¯ä¸€ä¸ªCå­—ç¬¦ä¸²
+ * v£º´«ÈëµÄ¸ù½ÚµãÖ¸Õë£¬±£´æ½âÎö½á¹û
+ * json£º´«ÈëµÄJSONÎÄ±¾ÊÇÒ»¸öC×Ö·û´®
  */
+
 int lept_parse(lept_value* v, const char* json);
-/*è®¿é—®è§£æžç»“æžœï¼ŒèŽ·å–è§£æžç»“æžœçš„ç±»åž‹*/
+
+/*·ÃÎÊ½âÎö½á¹û£¬»ñÈ¡½âÎö½á¹ûµÄÀàÐÍ*/
 lept_type lept_get_type(const lept_value* v);
 
 #endif /* LEPTJSON_H__ */

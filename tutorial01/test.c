@@ -6,7 +6,7 @@
 static int main_ret = 0;
 static int test_count = 0;
 static int test_pass = 0;
-/* å®å®šä¹‰ï¼›'\' è¡¨ç¤ºè¯¥è¡Œæœªç»“æŸï¼Œä¸²æ¥ä¸‹ä¸€è¡Œï¼Œä½¿ç”¨do...while(0)æ˜¯ä¸ºäº†å°†å®çš„å¤šæ¡è¯­å¥åŒ…è£¹æˆå•ä¸ªè¯­å¥*/
+/* ºê¶¨Òå£»'\' ±íÊ¾¸ÃĞĞÎ´½áÊø£¬´®½ÓÏÂÒ»ĞĞ£¬Ê¹ÓÃdo...while(0)ÊÇÎªÁË½«ºêµÄ¶àÌõÓï¾ä°ü¹ü³Éµ¥¸öÓï¾ä*/
 #define EXPECT_EQ_BASE(equality, expect, actual, format) \
     do {\
         test_count++;\
@@ -29,7 +29,7 @@ static void test_parse_null() {
 
 static void test_parse_true(){
 	lept_value v;
-	v.type=LEPT_NULL;
+	v.type=LEPT_FALSE;
 	EXPECT_EQ_INT(LEPT_PARSE_OK,lept_parse(&v,"true"));
 	EXPECT_EQ_INT(LEPT_TRUE,lept_get_type(&v));
 }
